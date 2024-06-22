@@ -14,7 +14,7 @@
         "borderTime": [300, 300, 300, 300, 300, 360], 
         "borderWarningTime": 15, 
         "borderFinalCenterRandom": true, 
-        "borderFinalCenterRange": 20
+        "borderFinalCenterRange": [20, 20]
     }, 
     "info": {
         "bossbar": {
@@ -22,7 +22,7 @@
             "barColor": "yellow"
         }, 
         "sidebar": {
-            "titleText": "2486生存戰", 
+            "titleText": {"text":"2486生存戰", "color":"aqua", "bold":"true"},
             "showEliminateRank": true, 
             "eliminateRankText": "排名", 
             "showNextBorderRadius": true, 
@@ -31,6 +31,10 @@
         "actionbar": {
             "playerBorderDistanceMode": "permanent", 
             "playerBorderDistanceTime": 300
+        },
+        "chat" : {
+            "playerPosMode": "roundEnd", 
+            "playerPosTime": 1200 
         }
     }
 }

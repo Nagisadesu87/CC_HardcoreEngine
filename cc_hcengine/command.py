@@ -37,6 +37,7 @@ class Command:
 	def create_command(self):
 		builder = mcdr.SimpleCommandBuilder()
 		builder.command("!!hce", self.show_help)
+		builder.command("!!hce help", self.show_help)
 		builder.command("!!hce start", self.start_game)
 		builder.command("!!hce start <time>", self.start_game_time)
 		builder.command("!!hce config set <config_id> <value>", self.config_set)

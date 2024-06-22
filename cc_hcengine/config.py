@@ -41,6 +41,7 @@ class infoConfig(Serializable):
     bossbar : bossbarConfig = bossbarConfig()
     sidebar : sidebarConfig = sidebarConfig()
     actionbar : actionbarConfig = actionbarConfig()
+    chat : chatConfig = chatConfig()
 
 class Config(Serializable):
     permission : permissionConfig = permissionConfig()
