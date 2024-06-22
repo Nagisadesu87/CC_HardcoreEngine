@@ -1,0 +1,11 @@
+{
+    "id": "cc_hcengine",
+    "version": "1.0.0",
+    "name": "吃飯社生存戰引擎",
+    "description": "Core system for Hardcore Competition of C&C",
+    "author": "Nagisadesu87",
+    "link": "https://github.com/Nagisadesu87/CC_HardcoreEngine",
+    "dependencies": {
+        "mcdreforged": ">=2.0.0"
+    }
+}

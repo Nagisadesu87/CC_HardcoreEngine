@@ -1,0 +1,36 @@
+{
+    "permission": {
+    "start": 3,
+    "config": 3
+    },
+    "system": {
+        "rconPort": ["127.0.0.1"],
+        "rconPassword": "password"
+    },
+    "game": {
+        "roundCount": 6,
+        "roundTime": [1200, 1200, 1200, 1200, 1200, 1200],
+        "borderRadius": [2500, 2000, 1500, 1000, 500, 50],
+        "borderTime": [300, 300, 300, 300, 300, 360], 
+        "borderWarningTime": 15, 
+        "borderFinalCenterRandom": true, 
+        "borderFinalCenterRange": 20
+    }, 
+    "info": {
+        "bossbar": {
+            "showRoundCountdown": true, 
+            "barColor": "yellow"
+        }, 
+        "sidebar": {
+            "titleText": "2486生存戰", 
+            "showEliminateRank": true, 
+            "eliminateRankText": "排名", 
+            "showNextBorderRadius": true, 
+            "nextBorderRadiusText": "下次邊界半徑"
+        }, 
+        "actionbar": {
+            "playerBorderDistanceMode": "permanent", 
+            "playerBorderDistanceTime": 300
+        }
+    }
+}
