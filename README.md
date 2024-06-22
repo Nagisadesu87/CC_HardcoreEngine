@@ -21,7 +21,7 @@ MCDR Plugin for a UHC-like Minecraft Hardcore Surivival Competition System.
 
 ## Config files
 hce/config.json
-```json
+```javascript
 {
     "permission": { // Command permissions
     "start": 3,
