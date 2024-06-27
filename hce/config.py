@@ -6,7 +6,8 @@ class permissionConfig(Serializable):
     config : int = 3
 
 class systemConfig(Serializable):
-    rconPort : str = "127.0.0.1",
+    rconAddress : str = "127.0.0.1"
+    rconPort : int = 25575
     rconPassword : str = "password"
 
 class gameConfig(Serializable):
@@ -16,14 +17,14 @@ class gameConfig(Serializable):
     borderTime : list[int] = [300, 300, 300, 300, 300, 360]
     borderWarningTime : int = 15
     borderFinalCenterRandom : bool = True
-    borderFinalCenterRange : int = [20, 20]
+    borderFinalCenterRange : list = [20, 20]
 
 class bossbarConfig(Serializable):
     showRoundCountdown : bool = True
     barColor: str = "yellow"
 
 class sidebarConfig(Serializable):
-    titleText : str = {"text":"2486生存戰", "color":"aqua", "bold":"true"}
+    titleText : dict = {"text":"2486生存戰", "color":"aqua", "bold":"true"}
     showEliminateRank : bool = True
     eliminateRankText : str = "排名"
     showNextBorderRadius : bool = True
@@ -48,35 +49,3 @@ class Config(Serializable):
     system : systemConfig = systemConfig()
     game : gameConfig = gameConfig()
     info : infoConfig = infoConfig()
-
-a = "info.bossbar.barColor"
-t = ""
-for i in a.split("."):
-    t += f"[{i}]"
-from typing import Dict, Any
-
-c = Config.get_default().serialize()
-def get_config_id(nested_config: Dict[str, Any], parent_key: str = "", sep: str = "."):
-    """
-    Flatten a nested json file.
-
-    Args:
-    nested_json (dict): The JSON object to flatten.
-    parent_key (str): The base key to prepend to the keys in nested JSON.
-    sep (str): The separator to use between key levels.
-
-    Returns:
-    dict: A flattened dictionary where keys are dot-separated.
-    """
-    items = []
-    for key, value in nested_config.items():
-        new_key = f"{parent_key}{sep}{key}" if parent_key else key
-        if isinstance(value, dict):
-            items.extend(get_config_id(value, new_key, sep=sep).items())
-        else:
-            items.append((new_key,value))
-    return dict(items)
-
-if "system.rconPort" in get_config_id(c).keys():
-    print("a")
-    

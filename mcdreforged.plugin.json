@@ -1,11 +1,12 @@
 {
-    "id": "cc_hcengine",
-    "version": "1.0.0",
-    "name": "吃飯社生存戰引擎",
-    "description": "Core system for Hardcore Competition of C&C",
+    "id": "hce",
+    "version": "0.0.1-alpha",
+    "name": "CC HardcoreEngine",
+    "description": "MCDR Plugin for a UHC-like Minecraft Hardcore Surivival Competition System",
     "author": "Nagisadesu87",
     "link": "https://github.com/Nagisadesu87/CC_HardcoreEngine",
     "dependencies": {
-        "mcdreforged": ">=2.0.0"
+        "mcdreforged": ">=2.0.0",
+        "minecraft_data_api": "*"
     }
 }

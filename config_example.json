@@ -1,10 +1,11 @@
 {
     "permission": {
-    "start": 3,
-    "config": 3
+        "start": 3,
+        "config": 3
     },
     "system": {
-        "rconPort": ["127.0.0.1"],
+        "rconAddress": ["127.0.0.1"],
+        "rconPort": "25575",
         "rconPassword": "password"
     },
     "game": {
