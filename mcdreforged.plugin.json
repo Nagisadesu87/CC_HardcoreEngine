@@ -1,12 +1,12 @@
 {
     "id": "hce",
-    "version": "0.0.1-alpha",
+    "version": "1.0.0-alpha",
     "name": "CC HardcoreEngine",
     "description": "MCDR Plugin for a UHC-like Minecraft Hardcore Surivival Competition System",
     "author": "Nagisadesu87",
     "link": "https://github.com/Nagisadesu87/CC_HardcoreEngine",
     "dependencies": {
-        "mcdreforged": ">=2.0.0",
-        "minecraft_data_api": "*"
+        "minecraft_data_api": "*",
+        "mcdreforged": ">=2.0.0"
     }
 }

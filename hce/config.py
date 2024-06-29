@@ -36,9 +36,9 @@ class actionbarConfig(Serializable):
 
 class chatConfig(Serializable):
     playerPosMode: str = "roundEnd"
-    playerPosTime: int = 1200
 
 class infoConfig(Serializable):
+    updateInterval : float = 0.5
     bossbar : bossbarConfig = bossbarConfig()
     sidebar : sidebarConfig = sidebarConfig()
     actionbar : actionbarConfig = actionbarConfig()

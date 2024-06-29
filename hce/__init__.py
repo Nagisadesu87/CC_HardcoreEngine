@@ -1,41 +1,36 @@
-import time, json
-from typing import Dict, Any
+import collections
+from typing import Dict, Any, Optional, Union, Tuple, List
 from typing import List, Tuple
 import mcdreforged.api.all as mcdr
 from mcdreforged.utils.serializer import Serializable
+import sys
 
 from .config import Config as cfg
 from .command import Command as cmd
 
 global __mcdr_server
 
-# RCON相關
-def rcon_execute(command: str):
-    global stop_status
-    if __mcdr_server.is_rcon_running():
-        result = __mcdr_server.rcon_query(command)
-        if result == "":
-            result = None
-    else:
-        if not stop_status:
-            __mcdr_server.logger.error("伺服器未開啟RCON或伺服器核心已關閉！")
-        stop_status = True
-        result = None
-    return result
-    
-
 # 插件載入
-def on_load(server: mcdr.PluginServerInterface):
-    global __mcdr_server, stop_status
+def on_load(server: mcdr.PluginServerInterface, prev):
+    global __mcdr_server, stop_status, player_data_getter, server_data_getter
+    
     __mcdr_server = server
-    stop_status = False
 
+
+    # if hasattr(prev, 'player_data_getter'):
+    #     player_data_getter.queue_lock = prev.player_data_getter.queue_lock
+    #     player_data_getter.work_queue = prev.player_data_getter.work_queue
+    # if hasattr(prev, 'server_data_getter'):
+    #     server_data_getter.player_list = prev.server_data_getter.player_list
+    
+    stop_status = False
     # load config
     config = __mcdr_server.load_config_simple(target_class=cfg)
-
+    server.logger.info(sys.path)
     #load command
     cmd(__mcdr_server, config.permission)
     
+
 # 插件卸載
 def on_unload(_):
     global stop_status

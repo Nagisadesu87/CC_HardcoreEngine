@@ -6,7 +6,7 @@ from typing import Any, Dict, List
 import time,os,re
 
 from .config import Config
-# from .main import Main
+from .main import *
 from .util import *
 
 global config_id
@@ -53,6 +53,7 @@ class Command:
             return
         
         # 開始比賽
+        game_start(server=self.__mcdr_server)
 
     def start_game_time(self, source: mcdr.CommandSource, context: mcdr.CommandContext):
         # 檢查權限
@@ -61,6 +62,7 @@ class Command:
             return
         
         # 計時後開始比賽
+        game_start(server=self.__mcdr_server, start_countdown_time=context["time"])
 
     def config_set(self, source: mcdr.CommandSource, context: mcdr.CommandContext):
         # 檢查權限

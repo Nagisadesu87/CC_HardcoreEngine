@@ -1,6 +1,6 @@
 import mcdreforged.api.all as mcdr
 from mcdreforged.utils.serializer import Serializable
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Tuple
 import math
 
 from .config import Config as cfg
@@ -53,8 +53,14 @@ def get_edge_distance(player_pos: list[float, float], edge_center_pos: list[int,
     d = math.sqrt((intersection[0] - player_pos[0]) ** 2 + (intersection[1] - player_pos[1]) ** 2)
     return d
 
-def get_pos_in_edge(player_pos: list[float, float], edge_center_pos: list[int, int], edge_radius: float) -> bool:
+def if_pos_in_edge(player_pos: list[float, float], edge_center_pos: list[int, int], edge_radius: float) -> bool:
     """
     Calculate player is inside the edge or not.
     """
     return (edge_center_pos[0] - edge_radius <= player_pos[0] <= edge_center_pos[0] + edge_radius) and (edge_center_pos[1] - edge_radius <= player_pos[1] <= edge_center_pos[1] + edge_radius)
+
+def sec_time_format(sec_time:int) -> Tuple:
+    """
+    Exchange the time from second to formatted time (mm:ss).
+    """
+    return (sec_time//60, sec_time%60)
